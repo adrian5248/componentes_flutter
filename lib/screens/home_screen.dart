@@ -7,7 +7,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return  Scaffold(
       appBar: AppBar(
-        title: const Text('AeroMex'),
+        title: const Text('Componentes Flutter'),
       ),
       // el listView sirve para hacer una lista y aparesca el scrol
         body: ListView(
