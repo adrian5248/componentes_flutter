@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:practica3_5c/theme/app_theme.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -37,17 +38,22 @@ class HomeScreen extends StatelessWidget {
             const Divider(),
             ListTile(
               // Este es un titulo
-              leading: const Icon(Icons.notification_add),
-              title: Text(
-                'Notificaciones',
-                style: Theme.of(context).textTheme.headlineLarge,
+              leading: const Icon(
+                Icons.notification_add,
+                color: AppTheme.mainColor,
+              ),
+              title: Text('Notificaciones',
+                  style: AppTheme.lightTheme.textTheme.headlineLarge),
+              subtitle: Text(
+                'Creacion de notificaciones',
+                style: AppTheme.lightTheme.textTheme.bodySmall,
                 ),
-              subtitle: const Text('Creacion de notificaciones'),
-              trailing: const Icon(Icons.arrow_circle_right),
-            ),
-            const Divider(),
-          ],
-        ),
-      );
+              trailing: const Icon(
+                Icons.arrow_circle_right,
+                color: AppTheme.mainColor,),
+              ),
+            ],
+          ),
+        );
     }
   }

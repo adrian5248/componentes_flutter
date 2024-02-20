@@ -4,15 +4,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTheme{
   //Aqui hago las declaraciones de los colores
-  static const mainColor = Color.fromARGB(255, 121, 103, 156);
+  static const mainColor = Color.fromARGB(255, 75, 79, 75);
   static const backColor = Color.fromARGB(255, 183, 171, 243);
+  static const bodyColor = Color.fromARGB(255, 18, 173, 36);
 
   //Aqui las declaraciones del tema
   static final ThemeData lightTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: backColor,
         appBarTheme: const AppBarTheme(color: mainColor),
         textTheme: TextTheme(
-            headlineLarge: GoogleFonts.acme(
+            headlineLarge: GoogleFonts.montserrat(
               color: mainColor,
               fontSize: 25.0,
               fontWeight: FontWeight.w500,
@@ -25,7 +26,11 @@ class AppTheme{
               decorationThickness: 3.0,
               fontStyle: FontStyle.italic,
             ),
-            //bodySmall:
+            
+            bodySmall: GoogleFonts.montserrat(
+            color: bodyColor,
+            decorationStyle: TextDecorationStyle.dashed,
           ),
-      );
+        ),
+    );
 }
