@@ -60,7 +60,7 @@ class HomeScreen extends StatelessWidget {
               // Este es un titulo
               leading: const Icon(
                 Icons.notification_add,
-                color: AppTheme.mainColor,
+                color: Color.fromARGB(255, 60, 108, 122),
               ),
               title: Text('Notificaciones',
                   style: AppTheme.lightTheme.textTheme.headlineLarge),
