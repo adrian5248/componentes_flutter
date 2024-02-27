@@ -52,6 +52,15 @@ class AppTheme{
               decorationThickness: 3.0,
               fontStyle: FontStyle.italic,
             ),
+            headlineMedium: GoogleFonts.montserrat(
+              color: mainColor,
+              //aqui es para cambiar el tamaño del nombre que se ingresa
+              fontSize: 22.0,
+              fontWeight: FontWeight.w500,
+              decoration: TextDecoration.underline,
+              decorationStyle: TextDecorationStyle.dotted,
+              decorationThickness: 1.5,
+            ),
             bodySmall: GoogleFonts.montserrat(
             color: bodyColor,
             decorationStyle: TextDecorationStyle.dashed,
