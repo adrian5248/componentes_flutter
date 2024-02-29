@@ -24,11 +24,21 @@ class HomeScreen extends StatelessWidget {
                 'Entradas',
                 style: Theme.of(context).textTheme.headlineLarge,
                 ),
-                subtitle: const Text('diferentes widgets para entradas de flutter'),
+                subtitle: const Text('diferentes widgets para entradas de flutter',
+                ),
+                // trailing: const CircularProgressIndicator(
+                //   //el value es para que si quiero que gire o este estatico ya sea que se lo quite o se lo ponga
+                //   //value: 0.5,
+                //   //el strokeWidth es para cambiar el ancho del icono de la ruedita
+                //   strokeWidth: 5.0,
+                //   color: AppTheme.mainColor,
+                //   backgroundColor: Color.fromARGB(255, 74, 132, 150),
+                // ),
                 trailing: IconTheme(
                 data: AppTheme.lightTheme.iconTheme,
-                child: const Icon(Icons.arrow_circle_right),),
-        
+                child: const Icon(Icons.arrow_circle_right),
+                ),
+                
                 onTap: () {
                   final ruta1 = MaterialPageRoute(builder: (context) {
                     return const InputsScreen();

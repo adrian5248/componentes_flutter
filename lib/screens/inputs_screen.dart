@@ -12,39 +12,50 @@ class _InputsScreenState extends State<InputsScreen> {
   //aqui podemos declarar las variables
   bool valueSwitch = false;
   double valueSlider = 0.0;
+  int selectedIndex = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Entradas')),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-        children: [
-            Text(
-              'Entradas',
-              style: AppTheme.lightTheme.textTheme.headlineLarge,
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: [
+            //aqui es para mandar a llamar lo que quiero
+            entradaTexto(),
+            entradaSwitch(),
+            entradaSlider(),
+
+            const ElevatedButton(
+              onPressed: null,
+              child: Text(
+                'Guardar',
+              ),
+            )
+          ],
+        ),
+      ),
+      //el bottomNavigationBar sirve para poner la barra de navegacion en la parte de abajo
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: selectedIndex,
+        backgroundColor: AppTheme.mainColor,
+        items: const [
+          //aqui es para poner los iconos que queramos, se recomiendan 4 max
+          BottomNavigationBarItem(
+            icon: Icon(Icons.home,
+            color: Colors.white,
+            ),
+            label: "Inicio",
           ),
-          //aqui es para mandar a llamar lo que quiero
-          entradaTexto(),
-          entradaSwitch(),
-          entradaSlider(),
-          const Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              ElevatedButton(
-                onPressed: null,
-                child: Text(
-                  'regresar',
-                  ),
-              ),
-              ElevatedButton(
-                onPressed: null,
-                child: Text(
-                  'Ir a Data Screen',
-                ),
-              ),
-            ],
-          )
+          BottomNavigationBarItem(
+            icon: Icon(Icons.list,
+            color: Colors.white,
+            ),
+            label: "Datos",
+            
+          ),
         ],
       ),
     );
@@ -65,6 +76,7 @@ class _InputsScreenState extends State<InputsScreen> {
   Row entradaSwitch(){
     return Row(
       children: <Widget>[
+        const FlutterLogo(),
         Text(
           '¿Te gusta flutter?',
           style: AppTheme.lightTheme.textTheme.headlineLarge,
