@@ -123,7 +123,7 @@ class _InputsScreenState extends State<InputsScreen> {
           value: valueSlider,
           //aqui es para poner colores a la barra
           activeColor: AppTheme.mainColor,
-          inactiveColor: AppTheme.accentColor,
+          inactiveColor: Color.fromARGB(255, 20, 148, 65),
           thumbColor: Colors.white,
           //aqui es para ponerle divisiones a la barra
           divisions: 10,

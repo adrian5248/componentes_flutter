@@ -21,6 +21,7 @@ class _ImagesScreenState extends State<ImagesScreen> {
       body: ListView(
         children: [
           imageCard(),
+          imageWeb(),
 
           //esto es para ajustar la imagen
           
@@ -33,13 +34,39 @@ class _ImagesScreenState extends State<ImagesScreen> {
     return Card(
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(30)),
-        child: const SizedBox(
-          height: 500,
-          width: 500,
-          child: Image(
-            image: AssetImage('assets/imgs/viceversa.png'),
+        margin: const EdgeInsets.all(20),
+        elevation: 10,
+        child: ClipRRect(
+          borderRadius: BorderRadius.circular(30),
+          child: Column(
+            children: [
+              const Image(
+                image: AssetImage('assets/imgs/viceversa.png')
+              ),
+              //aqui es para agregarle nombre a la imagen
+              Container(
+                padding: const EdgeInsets.all(10),
+                child:  Text('Ciudad Viceversa',
+                        style: AppTheme.lightTheme.textTheme.bodySmall,
+                ),
+              ),
+            ],
           ),
-      ),
-    );
-  }
+        ),
+      );
+    }
+
+    Widget imageWeb(){
+      return Center(
+        child: Image.network('https://www.classicdriver.com/sites/default/files/cars_images/img_8365_0.jpg'),
+      );
+    }
 }
+
+
+        // child: const SizedBox(
+        //   height: 500,
+        //   width: 500,
+          // child: const Image(
+          //   image: AssetImage('assets/imgs/viceversa.png'),
+          // ),
