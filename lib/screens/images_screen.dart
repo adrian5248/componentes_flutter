@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practica3_5c/theme/app_theme.dart';
+import 'package:transparent_image/transparent_image.dart';
 
 class ImagesScreen extends StatefulWidget {
   const ImagesScreen({super.key});
@@ -56,17 +57,41 @@ class _ImagesScreenState extends State<ImagesScreen> {
       );
     }
 
-    Widget imageWeb(){
-      return Center(
-        child: Image.network('https://www.classicdriver.com/sites/default/files/cars_images/img_8365_0.jpg'),
+    //aqui es para importar una imagen desde la web y tambien es para poner un circulo que indica que carag
+    Stack imageWeb(){
+      return Stack(
+        children: <Widget> [
+          const Center(
+              child: CircularProgressIndicator(),
+            ),
+          //esto me siver para ajustar el circulo que indica la carga de la imagen y si no nomas lo quito yse queda asi
+          // child: SizedBox(
+            //   height: 200,
+            //   width: 200, )
+          Center(
+            child: SizedBox(
+            height: 500,
+            width: 500,
+            child: FadeInImage.memoryNetwork(
+              placeholder: kTransparentImage,
+              image: 'https://cdn.botb.com/media/21747/porsche-911-gt3-rs-1.jpg'
+              ),
+            ),
+          ),
+        ],
       );
     }
 }
+            //esto es oara mostar una imagen de la web
+            // Image.network()),
 
 
+
+
+        //esto es para ajustar una imagen
         // child: const SizedBox(
         //   height: 500,
         //   width: 500,
-          // child: const Image(
-          //   image: AssetImage('assets/imgs/viceversa.png'),
-          // ),
+        // child: const Image(
+        //   image: AssetImage('assets/imgs/viceversa.png'),
+        // ),
